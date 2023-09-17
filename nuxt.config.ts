@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     ssr: false,
     app: {
         baseURL: "/testtask-pwa-indexeddb/",
+        buildAssetsDir: "assets"
     },
     css: ["/assets/scss/main.scss"],
 
