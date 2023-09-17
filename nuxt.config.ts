@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     ssr: false,
     app: {
         baseURL: "/testtask-pwa-indexeddb/",
-        buildAssetsDir: "assets"
+        buildAssetsDir: "assets",
     },
     css: ["/assets/scss/main.scss"],
 
@@ -85,6 +85,7 @@ export default defineNuxtConfig({
                 : ["@juggle/resize-observer"],
     }, */
     vite: {
+        base: "/testtask-pwa-indexeddb/",
         /* optimizeDeps: {
             include:
                 process.env.NODE_ENV === "development"
