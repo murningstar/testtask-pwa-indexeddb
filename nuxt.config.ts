@@ -1,5 +1,4 @@
 import sanitizer from "sanitize-filename";
-const repoPath = "/testtask-pwa-indexeddb";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // devtools: { enabled: true }
@@ -24,27 +23,27 @@ export default defineNuxtConfig({
             background_color: "#89bbde",
             icons: [
                 {
-                    src: repoPath + "/icons/pwa-64x64.png",
+                    src: "/testtask-pwa-indexeddb/icons/pwa-64x64.png",
                     sizes: "64x64",
                     type: "image/png",
                 },
                 {
-                    src: repoPath + "/icons/apple-touch-icon-180x180.png",
+                    src: "/testtask-pwa-indexeddb/icons/apple-touch-icon-180x180.png",
                     sizes: "180x180",
                     type: "image/png",
                 },
                 {
-                    src: repoPath + "/icons/pwa-192x192.png",
+                    src: "/testtask-pwa-indexeddb/icons/pwa-192x192.png",
                     sizes: "192x192",
                     type: "image/png",
                 },
                 {
-                    src: repoPath + "/icons/pwa-512x512.png",
+                    src: "/testtask-pwa-indexeddb/icons/pwa-512x512.png",
                     sizes: "512x512",
                     type: "image/png",
                 },
                 {
-                    src: repoPath + "/icons/maskable-icon-512x512.png",
+                    src: "/testtask-pwa-indexeddb/icons/maskable-icon-512x512.png",
                     sizes: "512x512",
                     type: "image/png",
                     purpose: "maskable",
