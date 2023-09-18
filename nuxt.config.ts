@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // devtools: { enabled: true }
-    // ssr: false,
+    ssr: false,
     app: {
         baseURL: "/testtask-pwa-indexeddb/",
         buildAssetsDir: "assets",
@@ -89,11 +89,11 @@ export default defineNuxtConfig({
         base: "/testtask-pwa-indexeddb/",
 
         build: {
-            // rollupOptions: {
-            //     output: {
-            //         sanitizeFileName: false,
-            //     },
-            // },
+            rollupOptions: {
+                output: {
+                    sanitizeFileName: false,
+                },
+            },
             assetsInlineLimit:0
         },
         /* optimizeDeps: {
