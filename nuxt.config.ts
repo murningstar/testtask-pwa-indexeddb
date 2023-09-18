@@ -67,7 +67,7 @@ export default defineNuxtConfig({
                 }
             ], */
         },
-        includeAssets: ["index.html"],
+        // includeAssets: ["index.html"],
         // devOptions: { enabled: true, type: "module" },
     },
 
