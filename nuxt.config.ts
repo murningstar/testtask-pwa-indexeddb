@@ -86,6 +86,11 @@ export default defineNuxtConfig({
     }, */
     vite: {
         base: "/testtask-pwa-indexeddb/",
+        /* build:{rollupOptions:{
+            output:{
+                sanitizeFileName:false
+            }
+        }} */
         /* optimizeDeps: {
             include:
                 process.env.NODE_ENV === "development"
