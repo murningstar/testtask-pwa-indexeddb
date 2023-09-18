@@ -11,7 +11,7 @@ jobs:
               with:
                   node-version: 18
             - run: npm ci
-            - uses: ./.github/actions/deploy-pages-nuxt3/action.yaml
+            - uses: ./.github/actions/deploy-pages-nuxt3
               with:
                   username: ${{ github.repository_owner }}
                   reponame: "testtask-pwa-indexeddb"
