@@ -49,8 +49,10 @@ onMounted(async () => {
     useResizeObserver(canvasRef, (entries) => {
         useThrottleFn(() => drawImage, 150)
     })
+    await nextTick()
     /* Populate Images from Indexeddb if present */
     const indexeddbEmpty = await db.imageFile.count() == 0
+    console.log('indexeddbEmpty: ', indexeddbEmpty);
     if (indexeddbEmpty) {
         const files = await db.imageFile.toArray()
         const urls = files.map(file => URL.createObjectURL(file))
