@@ -24,6 +24,7 @@
         "@vite-pwa/nuxt": "^0.1.1",
         "naive-ui": "^2.34.4",
         "nuxt": "latest",
+        "sanitize-filename": "^1.6.3",
         "sass": "^1.66.1",
         "vfonts": "^0.0.3",
         "workbox-build": "^7.0.0",

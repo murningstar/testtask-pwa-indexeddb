@@ -1,3 +1,4 @@
+import sanitizer from "sanitize-filename";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     // devtools: { enabled: true }
@@ -18,7 +19,7 @@ export default defineNuxtConfig({
             start_url: "/",
             theme_color: "#f7f583",
             background_color: "#89bbde",
-            
+
             icons: [
                 {
                     src: "/icons/pwa-64x64.png",
@@ -91,10 +92,18 @@ export default defineNuxtConfig({
         build: {
             rollupOptions: {
                 output: {
-                    sanitizeFileName: false,
+                    sanitizeFileName: (string) => {
+                        let sanitized = sanitizer(string);
+                        if (sanitized[0] === "_") {
+                            sanitized = sanitized.slice(1, sanitized.length);
+                        } else if (sanitized[1] === "_") {
+                            sanitized = sanitized.slice(1, sanitized.length);
+                        }
+                        return sanitized;
+                    },
                 },
             },
-            assetsInlineLimit:0
+            assetsInlineLimit: 0,
         },
         /* optimizeDeps: {
             include:
