@@ -11,13 +11,14 @@ export default defineNuxtConfig({
     modules: ["@vite-pwa/nuxt"],
 
     pwa: {
+        base: "/testtask-pwa-indexeddb/",
         manifest: {
             name: "Noviy Disk",
             short_name: "Noviy Disk",
             start_url: "/",
             theme_color: "#f7f583",
             background_color: "#89bbde",
-
+            
             icons: [
                 {
                     src: "/icons/pwa-64x64.png",

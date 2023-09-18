@@ -4,8 +4,8 @@ import { NMessageProvider, NConfigProvider } from 'naive-ui';
 </script>
 
 <template>
-  <VitePwaManifest />
   <ClientOnly>
+    <VitePwaManifest />
     <n-config-provider preflight-style-disabled>
       <n-message-provider>
         <!-- (naiveui) Pop-up сообщение, вылезающее при событии installed -->
