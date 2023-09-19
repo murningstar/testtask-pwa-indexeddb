@@ -198,7 +198,9 @@ function updateIndex(index: number) {
                 </template>
                 <template #default>
                     Upload
-                    <label for="fileInput" class="fileInputLabel"></label>
+                    <label for="fileInput" class="fileInputLabel"
+                        style="cursor: pointer;">
+                    </label>
                     <input type="file" ref="inputRef" id="fileInput" multiple="true"
                         webkitdirectory="true" accept="image/png, image/jpeg"
                         @change="onChangeFileInput">
