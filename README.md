@@ -1,5 +1,6 @@
 # Тестовое задание. PWA, Indexeddb(dexie), Vue(Nuxt), Actions->Pages 
-%% nuxt, actions->pages - от себя %%
+%% nuxt, actions->pages - от себя %% \
+https://murningstar.github.io/testtask-pwa-indexeddb/
 
 Создать веб-приложение, отвечающее требованиям:
 работа офлайн;
