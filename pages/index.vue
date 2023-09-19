@@ -5,9 +5,10 @@ import { useThrottleFn, useResizeObserver } from "@vueuse/core"
 import { db } from "../src/db"
 /* UI */
 import { NButton, NIcon, NCarousel, NRadioGroup, NRadioButton } from "naive-ui"
-// import { DriveFolderUploadFilled } from "@vicons/material"
-// import { ArrowBack, ArrowForward } from '@vicons/ionicons5'
-// import { FullscreenOutlined, FullscreenExitOutlined } from "@vicons/antd"
+/* Icons */
+import { DriveFolderUploadFilled } from "@vicons/material"
+import { ArrowBack, ArrowForward } from '@vicons/ionicons5'
+import { FullscreenOutlined, FullscreenExitOutlined } from "@vicons/antd"
 
 const fullscreenOn = ref<boolean>(false)
 const filesUploaded = computed(() => imgsrcList.value.length > 0)
@@ -192,7 +193,7 @@ function updateIndex(index: number) {
             <n-button icon-placement="left" type="primary">
                 <template #icon>
                     <n-icon>
-                        <!-- <DriveFolderUploadFilled /> -->
+                        <DriveFolderUploadFilled />
                     </n-icon>
                 </template>
                 <template #default>
@@ -210,8 +211,8 @@ function updateIndex(index: number) {
 
             <n-button ghost type="primary" @click="toggleFullscreen">
                 <n-icon>
-                    <!-- <FullscreenOutlined v-if="!fullscreenOn" />
-                    <FullscreenExitOutlined v-if="fullscreenOn" /> -->
+                    <FullscreenOutlined v-if="!fullscreenOn" />
+                    <FullscreenExitOutlined v-if="fullscreenOn" />
                 </n-icon>
             </n-button>
         </header>
@@ -273,13 +274,13 @@ function updateIndex(index: number) {
                         <button type="button" class="custom-arrow--left"
                             @click="prev">
                             <n-icon>
-                                <!-- <ArrowBack /> -->
+                                <ArrowBack />
                             </n-icon>
                         </button>
                         <button type="button" class="custom-arrow--right"
                             @click="next">
                             <n-icon>
-                                <!-- <ArrowForward /> -->
+                                <ArrowForward />
                             </n-icon>
                         </button>
                     </div>
