@@ -70,8 +70,9 @@ export default defineNuxtConfig({
         }, */
         vite: {
             base: "/testtask-pwa-indexeddb/",
-
+            
             build: {
+                minify:false,    
                 rollupOptions: {
                     output: {
                         sanitizeFileName: (string) => {
