@@ -159,24 +159,25 @@ async function onChangeFileInput(e: Event) {
     const files = [...target.files].filter((file) => {
         return file.type === 'image/jpeg' || file.type === "image/png"
     })
-    console.log(159, files);
+    console.log(162, files);
     try {
+        console.log(164, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
         await db.imageFile.clear() // перед выбором новой папки, удалить старые файлы
-        console.log(await db.imageFile.toArray());
+        console.log(166, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
         await db.imageFile.bulkAdd(files) // сохранить новые файлы
-        console.group('Uploaded into Indexeddb:');
-        console.log(await db.imageFile.toArray());
-        console.groupEnd()
+        console.log(168, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
         files.forEach(file => {
             const url = URL.createObjectURL(file)
             imgsrcList.value.push(url)
         })
         await drawImage()
     } catch (error) {
-        console.log(error);
+        console.group('Error happened');
+        console.log("error: ", error);
+        console.groupEnd();
     }
 }
-async function debugFileInput(e:Event){
+async function debugFileInput(e: Event) {
     console.log('File input clicked');
 }
 
