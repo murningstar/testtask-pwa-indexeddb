@@ -150,14 +150,18 @@ async function drawImage() {
 }
 
 async function onChangeFileInput(e: Event) {
+    console.log('File input changed');
     const target = e.target as HTMLInputElement
+    console.log(155);
     if (!target.files) {
         return
     }
     const files = [...target.files].filter((file) => {
         return file.type === 'image/jpeg' || file.type === "image/png"
     })
+    console.log(159, files);
     await db.imageFile.clear() // перед выбором новой папки, удалить старые файлы
+    console.log(await db.imageFile.toArray());
     await db.imageFile.bulkAdd(files) // сохранить новые файлы
     console.group('Uploaded into Indexeddb:');
     console.log(await db.imageFile.toArray());
@@ -167,6 +171,9 @@ async function onChangeFileInput(e: Event) {
         imgsrcList.value.push(url)
     })
     await drawImage()
+}
+async function debugFileInput(e:Event){
+    console.log('File input clicked');
 }
 
 async function logIDB() {
@@ -203,7 +210,7 @@ function updateIndex(index: number) {
                     </label>
                     <input type="file" ref="inputRef" id="fileInput" multiple="true"
                         webkitdirectory="true" accept="image/png, image/jpeg"
-                        @change="onChangeFileInput">
+                        @change="onChangeFileInput" @click="debugFileInput">
                 </template>
             </n-button>
 
