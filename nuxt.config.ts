@@ -57,18 +57,17 @@ export default defineNuxtConfig({
             },
             includeAssets: ["index.html"],
         },
-        /* build: {
-        transpile:
-            process.env.NODE_ENV === "production"
-                ? [
-                      "naive-ui",
-                      "vueuc",
-                      "@css-render/vue3-ssr",
-                      "@juggle/resize-observer",
-                    //   "dexie",
-                  ]
-                : ["@juggle/resize-observer"],
-    }, */
+        /* build: { // doesn't affect the problem with commas/semicolons 
+            transpile:
+                process.env.NODE_ENV === "production"
+                    ? [
+                          "naive-ui",
+                          "vueuc",
+                          "@css-render/vue3-ssr",
+                          "@juggle/resize-observer",
+                      ]
+                    : ["@juggle/resize-observer"],
+        }, */
         vite: {
             base: "/testtask-pwa-indexeddb/",
 
@@ -76,6 +75,7 @@ export default defineNuxtConfig({
                 rollupOptions: {
                     output: {
                         sanitizeFileName: (string) => {
+                            //gh pages can't use files staring with "_"
                             let sanitized = sanitizer(string);
                             if (sanitized[0] === "_") {
                                 sanitized = sanitized.slice(
