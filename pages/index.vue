@@ -163,10 +163,10 @@ async function onChangeFileInput(e: Event) {
     console.log(162, files);
     try {
         // console.log(164, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
-        await db.imageFile.clear().catch(error => { log('clear error', error) }).finally(() => {log('clear finally')}) // перед выбором новой папки, удалить старые файлы
-        // console.log(166, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
-        await db.imageFile.bulkAdd(files).catch(error => { log('bulkAdd error', error) }).finally(() => { log('bulkAdd finally') }) // сохранить новые файлы
-        // console.log(168, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
+        await Promise.resolve(await db.imageFile.clear().catch(error => { log('clear error', error) }).finally(() => { log('clear finally') }) // перед выбором новой папки, удалить старые файлы
+        )        // console.log(166, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
+        await Promise.resolve(await db.imageFile.bulkAdd(files).catch(error => { log('bulkAdd error', error) }).finally(() => { log('bulkAdd finally') }) // сохранить новые файлы
+        )        // console.log(168, 'indexeddb: ', await db.imageFile.toArray(), 'files: ', files);
         files.forEach(file => {
             const url = URL.createObjectURL(file)
             imgsrcList.value.push(url)
